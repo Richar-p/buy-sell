@@ -1,0 +1,19 @@
+.container-fluid.row
+    .col-md-1
+    .col-md-2.border
+      img.m-5 alt=(offer.name) src="#{offer&.photo.attached? ? url_for(offer.photo) : "https://www.layoutit.com/img/sports-q-c-140-140-3.jpg"}" width="140px" height="140px"
+    .col-md-6.border
+      h2.m-3
+        = offer.name
+      p.text-justify
+        = offer.description[0..380]
+        - if offer.description[381] != nil
+          = '...'
+    .col-md-2.border
+      h1.text-center.mb-5.mt-5
+        = "#{offer.price.to_s} $"
+      h6.text-center
+        = "located at #{offer.postal_code}"
+      p.text-center
+        a.btn href="/offers/#{offer.id}"  View details »
+    .col-md-1

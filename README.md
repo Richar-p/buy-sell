@@ -1,2 +1,2 @@
-# buy-sell
-Demo project
+# buy-and-sell
+Leboncoin clone

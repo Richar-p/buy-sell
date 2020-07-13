@@ -1,0 +1,16 @@
+- @title="Offers - Buy&Sell"
+
+.m-4
+  a href="javascript:history.back()" « return on search
+  
+.d-inline
+  p.text-right.mr-3
+    = "#{@offers.count} results"
+  nav
+    = will_paginate @offers
+
+- @offers.each do |offer|
+  = render 'offers/offer_partial', offer: offer
+
+nav
+  = will_paginate @offers

@@ -1,0 +1,28 @@
+- @title="Offer - Buy&Sell"
+
+
+.m-4
+  a href="javascript:history.back()" « return to result
+
+.container
+  .row
+    .col-md-8.border
+      h2.text-center.mt-3
+        = @offer.name
+      p.text-justify
+        = @offer.description
+      h6.text-right
+        = "Published on #{@offer.created_at}"
+    .col-md-4
+      img alt=(@offer.name) src="#{@offer&.photo.attached? ? url_for(@offer.photo) : "https://placehold.it/500x0"}" width="500px" height="500px" onclick="window.open(this.src);return false" style="cursor: pointer;"
+  .row
+    .col-md-6.border
+      h5.text-center
+        | Contact by email
+      h6.text-center
+        = @offer.email.present? ? @offer.email : "No email given"
+    .col-md-6.border
+      h5.text-center
+        | Contact by phone
+      h6.text-center
+        = @offer.phone_number.present? ? @offer.phone_number : "No phone number given"

@@ -1,0 +1,22 @@
+- @title="Home - Buy&Sell"
+
+img.img-fluid alt=("Responsive image") src="/banner.jpg"
+.container-fluid
+  .col-md-12.m-4
+    h3.text-center Welcome to the simplest buy/sell platform available
+  .row.m-5
+    .col-md-4
+      h3.text-center.text-primary
+        = AdminUser.all.count
+      h3.text-info.text-center admins
+    .col-md-4
+      h3.text-center.text-primary
+        = Offer.where(validate?: true).count
+      h3.text-center.text-info offers online
+    .col-md-4
+      h3.text-center.text-primary
+        = Offer.where(validate?: true).select(:postal_code).distinct.count
+      h3.text-center.text-info cities with offers
+  .row
+    .col-md-12.m-4
+      h3.text-center Use it now, for free and without signing in

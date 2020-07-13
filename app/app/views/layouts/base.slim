@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title 
+      = @title
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag('application', media: 'all')
+    = javascript_include_tag('application')
+    = yield(:head)
+    link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet" /
+
+    meta charset="utf-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+  header
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand href="/"  Buy&Sell
+      .collapse.navbar-collapse
+        ul.navbar-nav.ml-md-auto
+          li.nav-item
+            a.nav-link href="/offers/new" I want to sell something
+          li.nav-item
+            a.nav-link href="/offers/search" I want to buy something
+  body
+    = yield
+

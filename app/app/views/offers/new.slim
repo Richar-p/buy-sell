@@ -1,0 +1,58 @@
+- @title="Create an offer - Buy&Sell"
+
+h1.text-center.m-4 Create an offer
+= form_for(@offer) do |f|
+  .container
+    .row
+      .col-md-3
+        = f.label :name
+      .col-md-8
+        = f.text_field :name
+        p.text-danger.small
+          = @offer.errors[:name][0]
+    .row
+      .col-md-3
+        = f.label :description
+      .col-md-8
+        = f.text_area :description
+        p.text-danger.small
+          = @offer.errors[:description][0]
+    .row
+      .col-md-3
+        = f.label :email
+      .col-md-8
+        = f.email_field :email
+        p.text-danger.small
+          = @offer.errors[:email][0]
+    .row
+      .col-md-3
+        = f.label :phone_number
+      .col-md-8
+        = f.text_field :phone_number
+        p.text-danger.small
+          = @offer.errors[:phone_number][0]
+    .row
+      .col-md-3
+        = f.label :price
+      .col-md-8
+        = f.number_field :price
+
+        p.text-danger.small
+          = @offer.errors[:price][0]
+    .row
+      .col-md-3
+        = f.label :postal_code
+      .col-md-8
+        = f.text_field :postal_code
+        p.text-danger.small
+          = @offer.errors[:postal_code][0]
+    .row
+      .col-md-3
+        = f.label :photo
+      .col-md-8
+        = f.file_field :photo
+        p.text-danger.small
+          = @offer.errors[:photo][0]
+
+    .actions
+      = f.submit value: 'Create an offer'
