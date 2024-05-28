@@ -1,4 +1,9 @@
 # Buy&Sell
+
+This project was made when i was junior. It was a technical test for a company.
+The full documentation are in french, and all the code are (really) outdated.
+
+____
 Ce projet a été réalisé dans le but de démontrer mes compétences techniques, mises en pratique sur le framework RubyOnRails.
 
 Le sujet de projet était le suivant : "Réaliser un clone du site 'Leboncoin.fr'"
